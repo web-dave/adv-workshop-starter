@@ -7,7 +7,6 @@ import { SwapiRoutingModule } from './swapi-routing.module';
 import { ApiService } from './api.service';
 import { StarshipComponent } from './starships/starship/starship.component';
 import { FilmComponent } from './films/film/film.component';
-import { SwapiLinkPipe } from './swapi-link.pipe';
 import { PeoplesComponent } from './peoples/peoples/peoples.component';
 import { PeopleComponent } from './peoples/people/people.component';
 import { PlanetsComponent } from './planets/planets/planets.component';
@@ -23,7 +22,6 @@ import { VehicleComponent } from './vehicles/vehicle/vehicle.component';
     StarshipsComponent,
     StarshipComponent,
     FilmComponent,
-    SwapiLinkPipe,
     PeoplesComponent,
     PeopleComponent,
     PlanetsComponent,
