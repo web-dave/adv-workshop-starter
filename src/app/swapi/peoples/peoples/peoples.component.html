@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Birth Year</th>
+    <th>Gender</th>
+    <th>link</th>
+  </tr>
+  <tr *ngFor="let people of peoples$ | async">
+    <td>{{ people.name }}</td>
+    <td>{{ people.birth_year }}</td>
+    <td>{{ people.gender }}</td>
+    <td><a [routerLink]="people.url | swapiLink">Mehr</a></td>
+  </tr>
+</table>

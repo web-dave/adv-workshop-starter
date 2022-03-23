@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Average Height</th>
+    <th>Language</th>
+    <th>link</th>
+  </tr>
+  <tr *ngFor="let specie of species$ | async">
+    <td>{{ specie.name }}</td>
+    <td>{{ specie.average_height }}</td>
+    <td>{{ specie.language }}</td>
+    <td><a [routerLink]="specie.url | swapiLink">Mehr</a></td>
+  </tr>
+</table>

@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Climate</th>
+    <th>Terrain</th>
+    <th>link</th>
+  </tr>
+  <tr *ngFor="let planet of planets$ | async">
+    <td>{{ planet.name }}</td>
+    <td>{{ planet.climate }}</td>
+    <td>{{ planet.terrain }}</td>
+    <td><a [routerLink]="planet.url | swapiLink">Mehr</a></td>
+  </tr>
+</table>

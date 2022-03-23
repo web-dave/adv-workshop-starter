@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Model</th>
+    <th>Length</th>
+    <th>link</th>
+  </tr>
+  <tr *ngFor="let vehicle of vehicles$ | async">
+    <td>{{ vehicle.name }}</td>
+    <td>{{ vehicle.model }}</td>
+    <td>{{ vehicle.length }}</td>
+    <td><a [routerLink]="vehicle.url | swapiLink">Mehr</a></td>
+  </tr>
+</table>
