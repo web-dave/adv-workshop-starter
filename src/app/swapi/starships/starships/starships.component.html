@@ -1,3 +1,9 @@
+<app-paginator
+  [count]="count"
+  [page]="page$ | async"
+  [max]="max"
+  (paginate)="changePage($event)"
+></app-paginator>
 <table>
   <thead>
     <th>Name</th>

@@ -22,9 +22,12 @@ export class ApiService {
   constructor(private http: HttpClient) {}
 
   getList<t>(
-    name: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles'
+    name: 'films' | 'people' | 'planets' | 'species' | 'starships' | 'vehicles',
+    page: number = 1
   ): Observable<ISwapiResponse<t>> {
-    return this.http.get<ISwapiResponse<t>>(this.endpoints[name]);
+    return this.http.get<ISwapiResponse<t>>(
+      this.endpoints[name] + '?page=' + page
+    );
   }
 
   getEntity<t>(

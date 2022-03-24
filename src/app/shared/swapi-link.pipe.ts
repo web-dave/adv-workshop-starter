@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class SwapiLinkPipe implements PipeTransform {
   transform(url: string): string | undefined {
-    console.log('Pipe', url);
+    // console.log('Pipe', url);
     return url.split('/').slice(0, -1).pop();
   }
 }
