@@ -1,11 +1,11 @@
-<p class="opening_crawl">{{ film.opening_crawl }}</p>
+<app-crawler [film]="(film$ | async)?.opening_crawl"></app-crawler>
 <table>
   <tr>
     <th>Titel</th>
     <th>Director</th>
     <th>Producer</th>
   </tr>
-  <tr>
+  <tr *ngIf="film$ | async as film">
     <td>{{ film.title }}</td>
     <td>{{ film.director }}</td>
     <td>{{ film.producer }}</td>

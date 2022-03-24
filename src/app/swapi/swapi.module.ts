@@ -16,6 +16,7 @@ import { SpecieComponent } from './species/specie/specie.component';
 import { VehiclesComponent } from './vehicles/vehicles/vehicles.component';
 import { VehicleComponent } from './vehicles/vehicle/vehicle.component';
 import { SwapiLinkPipe } from './swapi-link.pipe';
+import { CrawlerComponent } from './crawler/crawler.component';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,7 @@ import { SwapiLinkPipe } from './swapi-link.pipe';
     VehiclesComponent,
     VehicleComponent,
     SwapiLinkPipe,
+    CrawlerComponent,
   ],
   imports: [CommonModule, HttpClientModule, SwapiRoutingModule],
   providers: [ApiService],
