@@ -30,16 +30,8 @@ const routes: Routes = [
   },
   {
     path: 'starships',
-    children: [
-      {
-        path: '',
-        component: StarshipsComponent,
-      },
-      {
-        path: ':id',
-        component: StarshipComponent,
-      },
-    ],
+    loadChildren: () =>
+      import('./starships/starships.module').then((m) => m.StarshipsModule),
   },
   {
     path: 'people',
