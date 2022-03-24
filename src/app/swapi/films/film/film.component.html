@@ -1,4 +1,5 @@
-<app-crawler [film]="(film$ | async)?.opening_crawl"></app-crawler>
+<app-crawler *ngIf="show" [film]="crawl$ | async" [crawl$]="foo$"></app-crawler>
+<button (click)="show = !show">flkgjhd</button>
 <table>
   <tr>
     <th>Titel</th>
