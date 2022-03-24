@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, NEVER, map } from 'rxjs';
+import { Observable, NEVER, map, tap } from 'rxjs';
 import { ApiService } from '../../api.service';
 import { IPeople } from '../../models/people.interface';
 
@@ -10,11 +10,20 @@ import { IPeople } from '../../models/people.interface';
 })
 export class PeoplesComponent implements OnInit {
   peoples$: Observable<IPeople[]> = NEVER;
+
+  foo = 'bar/baz/';
   constructor(private api: ApiService) {}
 
   ngOnInit(): void {
-    this.peoples$ = this.api
-      .getList<IPeople>('people')
-      .pipe(map((data) => data.results));
+    // setInterval(() => (this.foo = 'bar/baz/'), 1500);
+    this.peoples$ = this.api.getList<IPeople>('people').pipe(
+      tap((data) => console.log(data)),
+      map((data) => data.results)
+    );
+  }
+
+  transform(url: string): string | undefined {
+    console.log('Method', url);
+    return url.split('/').slice(0, -1).pop();
   }
 }

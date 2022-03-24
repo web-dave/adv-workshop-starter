@@ -22,6 +22,7 @@ const routes: Routes = [
         component: FilmsComponent,
       },
       {
+        // films/2
         path: ':id',
         component: FilmComponent,
       },
