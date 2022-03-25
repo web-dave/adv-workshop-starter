@@ -45,7 +45,6 @@ export class StarshipsComponent implements OnInit {
       map((data) => (data <= 0 ? 1 : data)),
       map((data) => (data > this.max ? this.max : data)),
       distinctUntilChanged(),
-      // tap((nPage) => (this.page = nPage)),
       tap((page) =>
         this.router.navigate(['.'], {
           relativeTo: this.route,
@@ -67,40 +66,9 @@ export class StarshipsComponent implements OnInit {
         )
       )
     );
-    // this.page$.subscribe((nPage) => {
-    //   // const pPage = this.page;
-    //   // this.page = nPage;
-    //   // if (isNaN(this.page)) {
-    //   //   this.page = 1;
-    //   // }
-    //   // if (this.page <= 0) {
-    //   //   this.page = 1;
-    //   // }
-    //   // if (this.page > this.max) {
-    //   //   this.page = this.max;
-    //   // }
-    //   // if (pPage === this.page) return;
-    //   this.getdata();
-    // });
   }
 
   changePage(p: number) {
     this.pageChages$.next(p);
   }
-
-  // getdata() {
-  //   this.router.navigate(['.'], {
-  //     relativeTo: this.route,
-  //     queryParams: {
-  //       page: this.page,
-  //     },
-  //   });
-  //   this.starships$ = this.api.getList<IStarship>('starships', this.page).pipe(
-  //     tap((data) => {
-  //       this.count = data.count;
-  //       this.max = new Array(Math.ceil(this.count / 10)).length;
-  //     }),
-  //     map((data) => data.results)
-  //   );
-  // }
 }
